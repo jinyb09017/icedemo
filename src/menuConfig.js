@@ -77,6 +77,22 @@ const asideMenuConfig = [
       },
     ],
   },
+
+  {
+    name: '配置',
+    path: '/config',
+    icon: 'calendar',
+    children: [
+      {
+        name: '错误',
+        path: '/config/errorcode',
+      },
+      {
+        name: '业务',
+        path: '/config/business',
+      },
+    ],
+  },
 ];
 
 export { headerMenuConfig, asideMenuConfig };

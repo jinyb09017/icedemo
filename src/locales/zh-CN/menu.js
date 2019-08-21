@@ -15,6 +15,10 @@ export default {
   'app.menu.demo.basic': '基础控件',
   'app.menu.demo.general': '通用表格',
 
+  'app.menu.config': '配置',
+  'app.menu.config.errorcode': '错误配置',
+  'app.menu.config.business': '业务配置',
+
   // Top Header
   'app.header.feedback': '反馈',
   'app.header.help': '帮助',

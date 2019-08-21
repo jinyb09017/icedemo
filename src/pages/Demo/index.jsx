@@ -1,11 +1,12 @@
 import React from 'react';
-import { Button, Search, Select, Grid,DatePicker } from '@alifd/next';
+import { Button, Search, Select, Grid,DatePicker,Table } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import styles from './index.module.scss';
 const {Row,Col} = Grid; 
 import moment from 'moment';
-// const { RangePicker, MonthPicker, YearPicker } = DatePicker;
-// const onChange = val => console.log(val);
+const { RangePicker, MonthPicker, YearPicker } = DatePicker;
+const onChange = val => console.log(val);
+const tabSource = [{id: 1, time: '2016'}];
 
 class Demo extends React.Component {
     constructor(props) {
@@ -95,6 +96,16 @@ class Demo extends React.Component {
                     <Col span="1p7" className = {styles.mycol}>col-7</Col>
                     <Col span="1p7" className = {styles.mycol}>col-7</Col>
                 </Row>
+                <h1>Time</h1>
+                <DatePicker onChange={onChange} /> <br /><br />
+                <MonthPicker onChange={onChange} /> <br /><br />
+                <YearPicker onChange={onChange} /> <br /><br />
+                <RangePicker onChange={onChange} />
+
+                <Table dataSource={tabSource}>
+                    <Table.Column title="Id" dataIndex="id"/>
+                    <Table.Column title="Time" dataIndex="time"/>
+                </Table>
             </IceContainer>
         );
     }
