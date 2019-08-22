@@ -2,14 +2,16 @@ import axios from 'axios';
 import { Message } from '@alifd/next';
 
 // Set baseUrl when debugging production url in dev mode
-// axios.baseUrl = '//xxxx.taobao.com';
+// axios.defaults.baseURL = 'http://localhost';
+// axios.defaults.
 
 export default async function request(options) {
   try {
     const response = await axios(options);
     const data = response.data;
     if (data.status === 'SUCCESS') {
-      return { response, data };
+      let {data:{data:{dataSource}}} = response;
+      return dataSource;
     } else if (data.status === 'NOT_LOGIN') {
       // 处理未登录逻辑
       location.href = '';
